@@ -8,9 +8,8 @@ CREATE TABLE Movie (
     release_date DATE NOT NULL,
     director VARCHAR(255) NOT NULL,
     cast TEXT,
-    synopsis TEXT,
     rating DECIMAL(2, 1),
-    critic_reviews TEXT
+    
 );
 
 CREATE TABLE Genre (
@@ -69,32 +68,32 @@ CREATE TABLE SearchHistory (
     FOREIGN KEY (customer_id) REFERENCES Customer(id)
 );
 
-INSERT INTO Movie (title, release_date, director, cast, synopsis, rating, critic_reviews) VALUES
-('The Matrix', '1999-03-31', 'Lana Wachowski, Lilly Wachowski', 'Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss', 'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.', 8.7, 'Highly acclaimed for its innovative visual effects and thought-provoking storyline.'),
-('Inception', '2010-07-16', 'Christopher Nolan', 'Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.', 8.8, 'Praised for its complex narrative structure and mind-bending visuals.'),
-('The Dark Knight', '2008-07-18', 'Christopher Nolan', 'Christian Bale, Heath Ledger, Aaron Eckhart', 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.', 9.0, 'Heath Ledger\'s performance as the Joker received universal acclaim.'),
-('Pulp Fiction', '1994-10-14', 'Quentin Tarantino', 'John Travolta, Uma Thurman, Samuel L. Jackson', 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.', 8.9, 'Renowned for its eclectic dialogue and nonlinear storyline.'),
-('Interstellar', '2014-11-07', 'Christopher Nolan', 'Matthew McConaughey, Anne Hathaway, Jessica Chastain', 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.', 8.6, 'Lauded for its scientific accuracy and emotional depth.'),
-('The Shawshank Redemption', '1994-10-14', 'Frank Darabont', 'Tim Robbins, Morgan Freeman, Bob Gunton', 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', 9.3, 'Consistently ranked among the greatest films of all time.'),
-('Fight Club', '1999-10-15', 'David Fincher', 'Brad Pitt, Edward Norton, Helena Bonham Carter', 'An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.', 8.8, 'Gained a cult following for its provocative themes and unconventional narrative.'),
-('Forrest Gump', '1994-07-06', 'Robert Zemeckis', 'Tom Hanks, Robin Wright, Gary Sinise', 'The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.', 8.8, 'Tom Hanks\' portrayal of the titular character received widespread acclaim.'),
-('Goodfellas', '1990-09-19', 'Martin Scorsese', 'Robert De Niro, Ray Liotta, Joe Pesci', 'The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.', 8.7, 'Known for its realistic portrayal of organized crime.'),
-('The Godfather', '1972-03-24', 'Francis Ford Coppola', 'Marlon Brando, Al Pacino, James Caan', 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.', 9.2, 'Considered one of the greatest films in world cinema.'),
-('The Godfather: Part II', '1974-12-20', 'Francis Ford Coppola', 'Al Pacino, Robert De Niro, Robert Duvall', 'The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.', 9.0, 'Won the Academy Award for Best Picture.'),
-('The Lord of the Rings: The Return of the King', '2003-12-17', 'Peter Jackson', 'Elijah Wood, Viggo Mortensen, Ian McKellen', 'Gandalf and Aragorn lead the World of Men against Sauron\'s army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.', 8.9, 'Won 11 Academy Awards including Best Picture and Best Director.'),
-('Schindler\'s List', '1994-12-15', 'Steven Spielberg', 'Liam Neeson, Ben Kingsley, Ralph Fiennes', 'In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.', 8.9, 'Won seven Academy Awards including Best Picture and Best Director.'),
-('Inglourious Basterds', '2009-08-21', 'Quentin Tarantino', 'Brad Pitt, Christoph Waltz, Mélanie Laurent', 'In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner\'s vengeful plans for the same.', 8.3, 'Known for its dialogue, direction, and performances.'),
-('The Silence of the Lambs', '1991-02-14', 'Jonathan Demme', 'Jodie Foster, Anthony Hopkins, Scott Glenn', 'A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.', 8.6, 'Won five Academy Awards including Best Picture and Best Actor for Hopkins.'),
-('Saving Private Ryan', '1998-07-24', 'Steven Spielberg', 'Tom Hanks, Matt Damon, Tom Sizemore', 'Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.', 8.6, 'Praised for its realistic portrayal of war and intense opening sequence.'),
-('The Departed', '2006-10-06', 'Martin Scorsese', 'Leonardo DiCaprio, Matt Damon, Jack Nicholson', 'An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.', 8.5, 'Won four Academy Awards including Best Picture and Best Director for Scorsese.'),
-('Gladiator', '2000-05-05', 'Ridley Scott', 'Russell Crowe, Joaquin Phoenix, Connie Nielsen', 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.', 8.5, 'Known for its impressive visual effects and powerful performances, especially by Crowe.'),
-('The Prestige', '2006-10-20', 'Christopher Nolan', 'Christian Bale, Hugh Jackman, Scarlett Johansson', 'Two stage magicians engage in competitive one-upmanship in an attempt to create the ultimate stage illusion, while sacrificing everything they have to outwit each other.', 8.5, 'Praised for its intricate plot and themes of obsession and sacrifice.'),
-('The Green Mile', '1999-12-10', 'Frank Darabont', 'Tom Hanks, Michael Clarke Duncan, David Morse', 'The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.', 8.6, 'Based on Stephen King\'s novel and noted for its emotional depth.'),
-('The Usual Suspects', '1995-09-15', 'Bryan Singer', 'Kevin Spacey, Gabriel Byrne, Chazz Palminteri', 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.', 8.5, 'Known for its plot twist and Kevin Spacey\'s Academy Award-winning performance.'),
-('Memento', '2001-05-25', 'Christopher Nolan', 'Guy Pearce, Carrie-Anne Moss, Joe Pantoliano', 'A man juggles searching for his wife\'s murderer and keeping his short-term memory loss from being an obstacle.', 8.4, 'Praised for its innovative narrative structure and psychological depth.'),
-('American History X', '1998-10-30', 'Tony Kaye', 'Edward Norton, Edward Furlong, Beverly D\'Angelo', 'A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.', 8.5, 'Edward Norton received critical acclaim for his portrayal of the main character.'),
-('The Sixth Sense', '1999-08-06', 'M. Night Shyamalan', 'Bruce Willis, Haley Joel Osment, Toni Collette', 'A boy who communicates with spirits seeks the help of a disheartened child psychologist.', 8.1, 'Known for its twist ending and the performances of Willis and Osment.'),
-;
+INSERT INTO Movie (title, release_date, director, cast, rating) VALUES
+('The Matrix', '1999-03-31', 'Lana Wachowski, Lilly Wachowski', 'Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss', 8.7),
+('Inception', '2010-07-16', 'Christopher Nolan', 'Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page', 8.8),
+('The Dark Knight', '2008-07-18', 'Christopher Nolan', 'Christian Bale, Heath Ledger, Aaron Eckhart', 9.0),
+('Pulp Fiction', '1994-10-14', 'Quentin Tarantino', 'John Travolta, Uma Thurman, Samuel L. Jackson', 8.9),
+('Interstellar', '2014-11-07', 'Christopher Nolan', 'Matthew McConaughey, Anne Hathaway, Jessica Chastain', 8.6),
+('The Shawshank Redemption', '1994-10-14', 'Frank Darabont', 'Tim Robbins, Morgan Freeman, Bob Gunton', 9.3),
+('Fight Club', '1999-10-15', 'David Fincher', 'Brad Pitt, Edward Norton, Helena Bonham Carter', 8.8),
+('Forrest Gump', '1994-07-06', 'Robert Zemeckis', 'Tom Hanks, Robin Wright, Gary Sinise', 8.8),
+('Goodfellas', '1990-09-19', 'Martin Scorsese', 'Robert De Niro, Ray Liotta, Joe Pesci', 8.7),
+('The Godfather', '1972-03-24', 'Francis Ford Coppola', 'Marlon Brando, Al Pacino, James Caan', 9.2),
+('The Godfather: Part II', '1974-12-20', 'Francis Ford Coppola', 'Al Pacino, Robert De Niro, Robert Duvall', 9.0),
+('The Lord of the Rings: The Return of the King', '2003-12-17', 'Peter Jackson', 'Elijah Wood, Viggo Mortensen, Ian McKellen', 8.9),
+('Schindler''s List', '1994-12-15', 'Steven Spielberg', 'Liam Neeson, Ben Kingsley, Ralph Fiennes', 8.9),
+('Inglourious Basterds', '2009-08-21', 'Quentin Tarantino', 'Brad Pitt, Christoph Waltz, Mélanie Laurent', 8.3),
+('The Silence of the Lambs', '1991-02-14', 'Jonathan Demme', 'Jodie Foster, Anthony Hopkins, Scott Glenn', 8.6),
+('Saving Private Ryan', '1998-07-24', 'Steven Spielberg', 'Tom Hanks, Matt Damon, Tom Sizemore', 8.6),
+('The Departed', '2006-10-06', 'Martin Scorsese', 'Leonardo DiCaprio, Matt Damon, Jack Nicholson', 8.5),
+('Gladiator', '2000-05-05', 'Ridley Scott', 'Russell Crowe, Joaquin Phoenix, Connie Nielsen', 8.5),
+('The Prestige', '2006-10-20', 'Christopher Nolan', 'Christian Bale, Hugh Jackman, Scarlett Johansson', 8.5),
+('The Green Mile', '1999-12-10', 'Frank Darabont', 'Tom Hanks, Michael Clarke Duncan, David Morse', 8.6),
+('The Usual Suspects', '1995-09-15', 'Bryan Singer', 'Kevin Spacey, Gabriel Byrne, Chazz Palminteri', 8.5),
+('Memento', '2001-05-25', 'Christopher Nolan', 'Guy Pearce, Carrie-Anne Moss, Joe Pantoliano', 8.4),
+('American History X', '1998-10-30', 'Tony Kaye', 'Edward Norton, Edward Furlong, Beverly D''Angelo', 8.5),
+('The Sixth Sense', '1999-08-06', 'M. Night Shyamalan', 'Bruce Willis, Haley Joel Osment, Toni Collette', 8.1);
+
 
 INSERT INTO Genre (name) VALUES
 ('Action'),
