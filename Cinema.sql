@@ -187,7 +187,7 @@ INSERT INTO Customer (name, email, phone) VALUES
 ('Quenny Kimbetsu', 'queeny.things@gmail.com', '+76761890'),
 ('Gaeming Quanxi', 'Gae.mer435@gmail.com', '+54645390'),
 ('Levi Asher', 'Levi.4sher@gmail.com', '+554325390'),
-('Jinshin Luofong', 'kuro.games23@gmail.com', '+43235390'),
+('Jinshin Luofong', 'kuro.games23@gmail.com', '+43235390');
     
 
 INSERT INTO Screening (movie_id, screening_time) VALUES
